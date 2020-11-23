@@ -1,0 +1,141 @@
+.site {
+    background-color: whitesmoke;
+    color : #474747;
+}
+.site__link {
+    text-decoration: none;
+}
+a, :link {
+    color: #474747 !important;
+    text-decoration: none;
+}
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    color: none;
+    text-decoration: none;
+}
+li, ul {
+    color: #474747;
+    text-decoration: none;
+    list-style: none;
+}
+.site__header {
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    color : #474747;
+    text-decoration : none;
+    padding: 0.3em;
+}
+.site__header__menu {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    padding: 0.3em;
+    margin: 5px;
+    
+}
+.site__header__menu li {
+    padding: 0.5em;
+}
+.social__menu .menu {
+    display: flex;
+    flex-flow: row nowrap !important;
+    justify-content: center;
+    padding: 0.3em;
+    margin: 5px;
+    text-decoration : none;
+}
+.social__menu .menu li, .site__footer__menu .menu li {
+    padding: 0.2em;
+}
+.site__footer__menu .menu {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap !important;
+    justify-content: center;
+    padding: 0.3em;
+    margin: 5px;
+}
+.site__footer__legals {
+    color : #474747;
+    font-size: 10px !important;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    margin: 5px;
+}
+/* Page Header + title */
+.page__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6em;
+    background-color: #EEE8E1;
+}
+.page__title {
+    margin: 3px;
+    color : #b68869;
+}
+.archive__description {
+    height: 18px;
+}
+
+/* Blog home page*/
+.site__blog img {
+    width: auto;
+} 
+.site__blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.site__content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+.site__post {
+    display: flex;
+    flex-flow: column wrap ;
+    align-items: center;
+    width: 18em;
+    text-align: justify;
+    margin: 2em;
+}
+
+/* single : post, articles */
+.post__content {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.site__post__content img {
+    width: 728px !important;
+}
+.post__meta__container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    width: 6em;
+}
+.post__meta {
+    padding: 0.2em !important;
+    font-size: smaller;
+    list-style: none;
+}
+.post__meta a {
+    padding: 0.2em !important;
+    font-size: smaller;
+    list-style: none;
+}

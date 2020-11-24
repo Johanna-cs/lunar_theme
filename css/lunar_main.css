@@ -27,6 +27,8 @@ nav {
     display: flex;
     width: 100%;
 }
+
+/******* Header : logo + menu ******/
 .site__header header {
     padding: none;
 }
@@ -62,25 +64,47 @@ nav {
 .header__menu li {
     padding-right: 2em;
 }
-.social__menu {
+/******* Footer : social, footer menu, legals ******/
+.site__footer footer {
+    padding: none;
+}
+.menus__footer {
+    display: flex !important;
+    flex-direction: column;
+    
+}
+.site__footer {
+    width: 100% ;
     display: flex;
-    flex-flow: row nowrap !important;
-    justify-content: center;
-    padding: 0.3em;
-    margin: 5px;
+    align-items: center;
+    flex-flow: column nowrap;
+    color : #474747;
     text-decoration : none;
+    padding-top: 3px;
+    font-size: smaller;
 }
-.social__menu .menu li, .site__footer__menu .menu li {
-    padding: 0.2em;
-}
-.site__footer__menu {
-    text-decoration: none;
-    list-style: none;
+.footer__social__menu, .site__footer__menu {
     display: flex;
-    flex-flow: row nowrap !important;
-    justify-content: center;
-    padding: 0.3em;
-    margin: 5px;
+    justify-content: space-around;
+    margin: 3px;
+}
+.social__menu li, .footer__menu li  {
+    padding-right: 1em;
+    padding-left: 1em;
+}
+.social__menu {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    padding: 3px;
+    margin: 3px;
+}
+.footer__menu {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    padding: 3px;
+    margin: 3px;
 }
 .site__footer__legals {
     color : #474747;
@@ -90,7 +114,10 @@ nav {
     text-align: center;
     margin: 5px;
 }
-/* Page Header + title */
+
+
+
+/******* Page : header, title ******/
 .page__header {
     display: flex;
     justify-content: center;

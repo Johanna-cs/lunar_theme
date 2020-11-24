@@ -11,24 +11,25 @@
 
 ?>
 
-	<footer id="colophon" class="site__footer">
-	
-	<nav class="social-navigation" role="navigation">
+<footer id="colophon" class="site__footer">
+	<div class='menus__footer'>
+	<nav id="site-navigation" class="footer__social__menu" role="navigation">
 		<?php wp_nav_menu( 
             array( 
 				'theme_location' => 'social media',
-				'container'=> 'div',
-				'container_class' => 'social__menu',
+				'container'=> 'ul',
+				'menu_class' => 'social__menu',
 				) ); ?>
 		</nav>
-		<nav class="footer-navigation" role="navigation">
-	<?php wp_nav_menu( 
+	<nav id="site-navigation" class="site__footer__menu" role="navigation">
+		<?php wp_nav_menu( 
             array( 
                 'theme_location' => 'footer',
-				'container' => 'div', 
-				'container_class' => 'site__footer__menu',                 
+				'container' => 'ul', 
+				'menu_class' => 'footer__menu',                 
 				) ); ?>
 		</nav>
+	</div>
 		<div class="site__footer__legals">
 			<a class='site__link' href="<?php echo esc_url( __( 'https://wordpress.org/', 'onthemoon' ) ); ?>">
 				<?php

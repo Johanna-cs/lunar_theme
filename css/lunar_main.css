@@ -1,5 +1,7 @@
-.site {
-    background-color: whitesmoke;
+/* Main css for Home, Blog, Header and Footer */
+
+.page.site{
+    background-color: #F5F1ED;
     color : #474747;
 }
 .site__link {
@@ -21,29 +23,46 @@ li, ul {
     text-decoration: none;
     list-style: none;
 }
+nav {
+    display: flex;
+    width: 100%;
+}
+.site__header header {
+    padding: none;
+}
 .site__header {
-    width: auto;
+    width: 100% ;
     display: flex;
     align-items: center;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     color : #474747;
     text-decoration : none;
-    padding: 0.3em;
+    padding-top: 3px;
+}
+.site__title {
+    display: none;
+}
+.custom-logo {
+    width: auto;
+    margin: 10px;
+    padding-right: 20px !important;
 }
 .site__header__menu {
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+.header__menu {
     list-style: none;
     text-decoration: none;
     display: flex;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
-    padding: 0.3em;
+    padding: 5px;
     margin: 5px;
-    
 }
-.site__header__menu li {
-    padding: 0.5em;
+
+.header__menu li {
+    padding-right: 2em;
 }
-.social__menu .menu {
+.social__menu {
     display: flex;
     flex-flow: row nowrap !important;
     justify-content: center;
@@ -54,7 +73,7 @@ li, ul {
 .social__menu .menu li, .site__footer__menu .menu li {
     padding: 0.2em;
 }
-.site__footer__menu .menu {
+.site__footer__menu {
     text-decoration: none;
     list-style: none;
     display: flex;
@@ -109,33 +128,4 @@ li, ul {
     width: 18em;
     text-align: justify;
     margin: 2em;
-}
-
-/* single : post, articles */
-.post__content {
-    margin: 20px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-.site__post__content img {
-    width: 728px !important;
-}
-.post__meta__container {
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: row nowrap;
-    align-items: baseline;
-    width: 6em;
-}
-.post__meta {
-    padding: 0.2em !important;
-    font-size: smaller;
-    list-style: none;
-}
-.post__meta a {
-    padding: 0.2em !important;
-    font-size: smaller;
-    list-style: none;
 }

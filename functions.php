@@ -14,10 +14,9 @@ function lunar_supports(){
 	// add_theme_support( 'custom-header' );
     // Déclarer l'emplacement des menus
     register_nav_menus( array(
-        'menu basique' => 'Menu basique',
+        'menu principal' => 'Menu principal',
         'footer' => 'Bas de page',
         'social media' => 'Réseaux Sociaux',
-        'lunar' => 'Menu Lunar',
     ) );
     	// Custom logo.
 	$logo_width  = 150;
@@ -196,15 +195,21 @@ function lunar_register_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'lunar_register_assets' );
 function template_enqueue_style() {
-	if ( is_page_template(array ('templates/front-page-lunar.php', 'templates/aboutus-lunar.php', 'templates/archive-lunar.php', 'templates/contact-lunar.php', 'templates/header-lunar.php', 'templates/offer-lunar.php', 'templates/program-lunar.php','templates/services-lunar.php', 'templates/single-temoignages-lunar.php', 'templates/archive-temoignages.php')) ) {
-	  /** Call landing-page-template-one enqueue */
+	
+	/** Call specific css enqueue */
 	  wp_enqueue_style( 
 		'lunar', 
-		get_template_directory_uri() . '/css/Lunar/lunar__main.css',
+		get_template_directory_uri() . '/css/lunar_main.css',
 		array(), 
 		'1.0'
 	);
-	} else {
+	
+	wp_enqueue_style( 
+		'lunar', 
+		get_template_directory_uri() . '/css/lunar_specific.css',
+		array(), 
+		'1.0'
+	);
 	  /** Call regular enqueue */
 	  wp_enqueue_style( 
 		'style',
@@ -212,14 +217,7 @@ function template_enqueue_style() {
 		array(), 
 		'1.0'
 	);
-	  
-	// Déclarer un autre fichier CSS
-	wp_enqueue_style( 
-		'onthemoon', 
-		get_template_directory_uri() . '/css/onthemoon.css',
-		array(), 
-		'1.0'
-	);
+
 	}
-  }
+  
   add_action( 'wp_enqueue_scripts', 'template_enqueue_style' );

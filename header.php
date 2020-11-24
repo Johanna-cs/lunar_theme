@@ -23,10 +23,10 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'onthemoon' ); ?></a>
+	
 
 	<header id="masthead" class="site__header">
-		<div class="site__header">
+			<div class="site__header__infos">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
@@ -35,7 +35,7 @@
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
 			$onthemoon_description = get_bloginfo( 'description', 'display' );
@@ -43,15 +43,15 @@
 				?>
 				<p class="site-description"><?php echo $onthemoon_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
-		</div><!-- .site-branding -->
+		</div> <!-- .site-branding -->
 
-		<nav id="site-navigation" class="site__header">
+		<nav id="site-navigation" class="site__header__menu">
 			<?php
 			wp_nav_menu(
 				array(
-				'theme_location' => 'menu basique', 
+				'theme_location' => 'menu principal', 
                 'container' => 'ul', // afin d'éviter d'avoir une div autour 
-                'menu_class' => 'site__header__menu', // ma classe personnalisée 
+                'menu_class' => 'header__menu', // ma classe personnalisée 
 				)
 			);
 			?>

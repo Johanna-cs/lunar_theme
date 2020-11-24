@@ -1,4 +1,8 @@
 <?php
+/*
+  Template Name: Accueil 
+  Template Post Type: page
+*/
 /**
  * The template for displaying front page
  *

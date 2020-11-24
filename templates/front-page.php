@@ -3,13 +3,14 @@
   Template Name: Lunar_accueil
 */
 	get_header();
-	if ( have_posts() ) : while ( have_posts() ) : the_post();
 ?>
+<main class="site__lunar">
 	<h1><?php the_title(); ?></h1>
     <div class="content">
-    	<?php the_content(); ?>
-    </div>
+		<?php the_content(); ?>
+    	<h2>Bonjour </h2>
+	</div>
+</main>
 <?php
-	endwhile; endif;
 	get_footer();
 ?>

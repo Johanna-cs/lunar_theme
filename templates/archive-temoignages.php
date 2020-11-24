@@ -1,12 +1,15 @@
 <?php
 /*
   Template Name: Lunar_temoignages
+  Template Post Type: page, temoignage
 */
 	get_header();
-	if ( have_posts() ) : while ( have_posts() ) : the_post();
+	if( is_post_type_archive( 'temoignage' )) : 
 ?>
+<?php if( have_posts() ) : ?>
 	<div class='lunar_temoin_header'> 
-		<h1><?php the_title(); ?></h1>
+		<h1>Témoignages page</h1>
+		<?php while( have_posts() ) : ?>
 	</div>
 	<?php $field['required'] = true; ?>
 	<?php 
@@ -28,8 +31,10 @@
 			<?php the_field( 'texte_temoin' ); ?></div>
 	</div>
 
-    
+	<?php 
+	endwhile;
+	endif;?>
 <?php
-	endwhile; endif;
+	endif;
 	get_footer();
 ?>

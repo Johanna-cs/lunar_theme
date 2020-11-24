@@ -7,17 +7,17 @@
 get_header(); ?>
   <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
     
-    <article class="post__content">
-      <?php the_post_thumbnail('medium_large'); ?>
+    <div class="lunar__post__content">
+      <?php the_post_thumbnail('square_M'); ?>
 
       <h1><?php the_title(); ?></h1>
-        <div class='post__meta__container'>
-          <p class="post__meta"><?php the_category(); ?></p>
-          <p class="post__meta"><?php the_date(); ?></p>
-          <p class="post__meta"><?php the_author(); ?></p>
+        <div class='lunar__post__meta__container'>
+          <p class="lunar__post__meta"><?php the_category(); ?></p>
+          <p class="lunar__post__meta"><?php the_date(); ?></p>
+          <p class="lunar__post__meta"><?php the_author(); ?></p>
         </div>
-      <?php the_content(); ?>
-    </article>
+        <div class='lunar__post__container' ><?php the_content(); ?></div>
+</div>
 
   <?php endwhile; endif; ?>
   <div class="site__navigation">

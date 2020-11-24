@@ -19,26 +19,26 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('site__lunar'); ?>>
+<body <?php body_class('lunar__site'); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
+<div id="page" class="lunar__site">
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'onthemoon' ); ?></a>
         <header id="masthead" class="lunar__header" role="banner">
-            <nav id="site-navigation" class="lunar__header">
                 <div class='lunar__header__menu'>
                     <a href="<?php echo home_url( '/' ); ?>">
-                    <?php the_custom_logo(); ?>
+                        <?php the_custom_logo(); ?>
                     </a>
-                    <?php 
-                    wp_nav_menu(  
-                        array( 
-                            'theme_location' => 'lunar', 
-                            'container' => 'div', 
-                            'container_class' => 'lunar__header__menu',
-                            'menu_class' => 'lunar__header__menu', 
-                        )  ); ?>
+                    <nav id="site-navigation" class="site__header">
+                        <?php 
+                        wp_nav_menu(  
+                            array( 
+                                'theme_location' => 'lunar', 
+                                'container' => 'div', 
+                                'container_class' => 'lunar__header',
+                                'menu_class' => 'lunar__header__menu', 
+                            )  ); ?>
+                    </nav>
                 </div>
-                </nav>
+
         </header>
 </div>
-    <?php wp_body_open(); ?>

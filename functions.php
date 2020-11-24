@@ -1,5 +1,5 @@
 <?php 
-function onthemoon_supports(){
+function lunar_supports(){
     // Ajouter la prise en charge des images mises en avant
     add_theme_support( 'post-thumbnails' );
     // Définir d'autres tailles d'images
@@ -10,7 +10,8 @@ function onthemoon_supports(){
     // Ajouter automatiquement le titre du site dans l'en-tête du site
     add_theme_support( 'title-tag' );
     add_theme_support('menus');
-    add_theme_support( 'custom-logo' );
+	add_theme_support( 'custom-logo' );
+	// add_theme_support( 'custom-header' );
     // Déclarer l'emplacement des menus
     register_nav_menus( array(
         'menu basique' => 'Menu basique',
@@ -59,23 +60,40 @@ function onthemoon_supports(){
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
 }
-add_action('after_setup_theme', 'onthemoon_supports');
-// Déclarer une sidebar pour intégrer des widgets
-// register_sidebar( array(
-// 	'id' => 'blog-sidebar',
-//     'name' => 'Blog',
-//     'before_widget'  => '<div class="site__sidebar__widget %2$s">',
-//     'after_widget'  => '</div>',
-//     'before_title' => '<p class="site__sidebar__widget__title">',
-//     'after_title' => '</p>',
-// ) );
+add_action('after_setup_theme', 'lunar_supports');
+// function lunar_custom_header_setup() {
+//     $defaults = array(
+//         // Default Header Image to display
+//         'default-image'         => lunar_get_custom_logo(),
+//         // Display the header text along with the image
+//         'header-text'           => false,
+//         // Header text color default
+//         'default-text-color'        => '000',
+//         // Header image width (in pixels)
+//         'width'             => 1000,
+//         // Header image height (in pixels)
+//         'height'            => 198,
+//         // Header image random rotation default
+//         'random-default'        => false,
+//         // Enable upload of image file in admin 
+//         'uploads'       => false,
+//         // function to be called in theme head section
+//         'wp-head-callback'      => 'wphead_cb',
+//         //  function to be called in preview page head section
+//         'admin-head-callback'       => 'adminhead_cb',
+//         // function to produce preview markup in the admin screen
+//         'admin-preview-callback'    => 'adminpreview_cb',
+//         );
+// }
+// add_action( 'after_setup_theme', 'lunar_custom_header_setup' );
+
 /**
  * Get the information about the logo.
  *
  * @param string $html The HTML output from get_custom_logo (core function).
  * @return string
  */
-function onthemoon_get_custom_logo( $html ) {
+function lunar_get_custom_logo( $html ) {
 
 	$logo_id = get_theme_mod( 'custom_logo' );
 
@@ -123,9 +141,38 @@ function onthemoon_get_custom_logo( $html ) {
 
 }
 
-add_filter( 'get_custom_logo', 'onthemoon_get_custom_logo' );
+add_filter( 'get_custom_logo', 'lunar_get_custom_logo' );
+function lunar_register_post_types() {
+	
+    // CPT Témoignages
+    $labels = array(
+        'name' => 'Témoignages',
+        'all_items' => 'Tous les témoignages',  // affiché dans le sous menu
+        'singular_name' => 'Témoignage',
+        'add_new_item' => 'Ajouter un témoignage',
+        'edit_item' => 'Modifier le témoignage',
+        'menu_name' => 'Témoignages'
+    );
 
-function onthemoon_register_assets() {
+	$args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+		'has_archive' => true,
+		'rewrite'     => array( 'slug' => 'temoignage' ), // my custom slug
+        'supports' => array( 'title', 'editor','thumbnail', 'page-attributes'),
+        'menu_position' => 5, 
+        'menu_icon' => 'dashicons-testimonial',
+	);
+
+	register_post_type( 'temoignages', $args );
+}
+add_action( 'init', 'lunar_register_post_types' ); // Le hook init lance la fonction
+
+
+
+
+function lunar_register_assets() {
     
     // Déclarer jQuery
     wp_deregister_script( 'jquery' ); // On annule l'inscription du jQuery de WP
@@ -139,33 +186,40 @@ function onthemoon_register_assets() {
     
     // Déclarer le JS
 	wp_enqueue_script( 
-        'onthemoon', 
+        'lunar', 
         get_template_directory_uri() . '/js/script.js', 
         array( 'jquery' ), 
         '1.0', 
         true
     );
     
-    // Déclarer style.css à la racine du thème
-    wp_enqueue_style( 
-        'style',
-        get_stylesheet_uri(), 
-        array(), 
-        '1.0'
-    );
-  	
-    // Déclarer un autre fichier CSS
-    wp_enqueue_style( 
-        'onthemoon', 
-        get_template_directory_uri() . '/css/onthemoon.css',
-        array(), 
-        '1.0'
-    );
-    wp_enqueue_style( 
-        'lunar', 
-        get_template_directory_uri() . '/css/Lunar/lunar__main.css',
-        array(), 
-        '1.0'
-    );
 }
-add_action( 'wp_enqueue_scripts', 'onthemoon_register_assets' );
+add_action( 'wp_enqueue_scripts', 'lunar_register_assets' );
+function template_enqueue_style() {
+	if ( is_page_template(array ('templates/front-page-lunar.php', 'templates/aboutus-lunar.php', 'templates/archive-lunar.php', 'templates/contact-lunar.php', 'templates/header-lunar.php', 'templates/offer-lunar.php', 'templates/program-lunar.php','templates/services-lunar.php', 'templates/single-temoignages-lunar.php', 'templates/archive-temoignages.php')) ) {
+	  /** Call landing-page-template-one enqueue */
+	  wp_enqueue_style( 
+		'lunar', 
+		get_template_directory_uri() . '/css/Lunar/lunar__main.css',
+		array(), 
+		'1.0'
+	);
+	} else {
+	  /** Call regular enqueue */
+	  wp_enqueue_style( 
+		'style',
+		get_stylesheet_uri(), 
+		array(), 
+		'1.0'
+	);
+	  
+	// Déclarer un autre fichier CSS
+	wp_enqueue_style( 
+		'onthemoon', 
+		get_template_directory_uri() . '/css/onthemoon.css',
+		array(), 
+		'1.0'
+	);
+	}
+  }
+  add_action( 'wp_enqueue_scripts', 'template_enqueue_style' );

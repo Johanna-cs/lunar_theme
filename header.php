@@ -22,8 +22,6 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	
 
 	<header id="masthead" class="site__header">
 			<div class="site__header__infos">
@@ -57,6 +55,6 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
+<div id="page" class="site">
 
 	

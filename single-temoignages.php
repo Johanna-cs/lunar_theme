@@ -28,7 +28,7 @@ get_header();
             <?php the_field( 'texte_temoin' ); ?></div>
     </div>
 
-  
+</div>
 <?php
   endwhile;
 get_footer();

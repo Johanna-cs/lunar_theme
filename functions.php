@@ -11,6 +11,7 @@ function lunar_supports(){
     add_theme_support( 'title-tag' );
     add_theme_support('menus');
 	add_theme_support( 'custom-logo' );
+	add_theme_support( 'widgets' );
 	// add_theme_support( 'custom-header' );
     // Déclarer l'emplacement des menus
     register_nav_menus( array(
@@ -27,7 +28,6 @@ function lunar_supports(){
 		$logo_width  = floor( $logo_width * 2 );
 		$logo_height = floor( $logo_height * 2 );
 	}
-
 	add_theme_support(
 		'custom-logo',
 		array(
@@ -60,31 +60,6 @@ function lunar_supports(){
 	add_theme_support( 'responsive-embeds' );
 }
 add_action('after_setup_theme', 'lunar_supports');
-// function lunar_custom_header_setup() {
-//     $defaults = array(
-//         // Default Header Image to display
-//         'default-image'         => lunar_get_custom_logo(),
-//         // Display the header text along with the image
-//         'header-text'           => false,
-//         // Header text color default
-//         'default-text-color'        => '000',
-//         // Header image width (in pixels)
-//         'width'             => 1000,
-//         // Header image height (in pixels)
-//         'height'            => 198,
-//         // Header image random rotation default
-//         'random-default'        => false,
-//         // Enable upload of image file in admin 
-//         'uploads'       => false,
-//         // function to be called in theme head section
-//         'wp-head-callback'      => 'wphead_cb',
-//         //  function to be called in preview page head section
-//         'admin-head-callback'       => 'adminhead_cb',
-//         // function to produce preview markup in the admin screen
-//         'admin-preview-callback'    => 'adminpreview_cb',
-//         );
-// }
-// add_action( 'after_setup_theme', 'lunar_custom_header_setup' );
 
 /**
  * Get the information about the logo.
@@ -132,7 +107,6 @@ function lunar_get_custom_logo( $html ) {
 			}
 
 			$html = preg_replace( $search, $replace, $html );
-
 		}
 	}
 
@@ -141,6 +115,25 @@ function lunar_get_custom_logo( $html ) {
 }
 
 add_filter( 'get_custom_logo', 'lunar_get_custom_logo' );
+
+
+require_once 'widgets/wds-instagram-widget.php';
+function lunar_register_widget () {
+    register_widget(WDS_Instagram_Widget::class);
+    register_sidebar([
+        'id' => 'sidebarFollow',
+		'name' => 'Sidebar Abonnez-vous',
+		'class' => 'sidebar_follow',
+        'before_widget' => '<div class="follow_widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<p">',
+        'after_title' => '</p>'
+    ]);
+}
+add_action( 'widgets_init', array( WDS_Instagram_Widget::get_instance(), 'hooks' ) );
+add_action('widgets_init', 'lunar_register_widget');
+
+
 function lunar_register_post_types() {
 	
     // CPT Témoignages
@@ -167,9 +160,6 @@ function lunar_register_post_types() {
 	register_post_type( 'temoignages', $args );
 }
 add_action( 'init', 'lunar_register_post_types' ); // Le hook init lance la fonction
-
-
-
 
 function lunar_register_assets() {
     
@@ -203,13 +193,7 @@ function template_enqueue_style() {
 		array(), 
 		'1.0'
 	);
-	
-	wp_enqueue_style( 
-		'lunar', 
-		get_template_directory_uri() . '/css/lunar_specific.css',
-		array(), 
-		'1.0'
-	);
+
 	  /** Call regular enqueue */
 	  wp_enqueue_style( 
 		'style',

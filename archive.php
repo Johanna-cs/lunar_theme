@@ -10,38 +10,32 @@
 get_header();
 ?>
 
-<div class='site__blog'>
-            <header class="page__header">
-				<?php
-				the_archive_title( '<h1 class="page__title">', '</h1>' );
-				the_archive_description( '<div class="archive__description">', '</div>' );
-				?>
-            </header>
+
+	<header class="page__header">
+		<?php
+		the_archive_title( '<h1 class="page__title">', '</h1>' );
+		the_archive_description( '<div class="archive__description">', '</div>' );
+		?>
+	</header>
+		<div class='site__blog'>
             <!-- .page-header -->
 			<main class='site__content'>
 			<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
   
-				<article class="site__post">
-					<h2><?php the_title(); ?></h2>
-
-					<?php the_post_thumbnail(); ?>
-					
-					<p class="post__meta">
-						Publié le <?php the_time( get_option( 'date_format' ) ); ?> 
-						par <?php the_author(); ?> • <?php comments_number(); ?>
-					</p>
-					
-						<?php the_excerpt(); ?>
-						
+			<article class="site__post">
+				<a href="<?php the_permalink(); ?>" class="post__link">
+					<?php the_post_thumbnail('square_M'); ?>
+				</a>
+					<h3><?php the_title(); ?></h3>					
+						<p><?php the_excerpt(); ?></p>
 						<p>
-						<a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
+						
 					</p>
-				</article>
+			</article>
 
 			<?php endwhile; endif; ?>
 			
-    </main>
-
+    </main> <!-- .page-content -->
 </div>
 
 <?php get_footer(); ?>

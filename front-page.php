@@ -26,10 +26,6 @@ get_header(); ?>
                    comments_template();
                endif;
             ?>
-        <div> 
-          <h4> Trouver sa voix </h4>
-          <p> Coucou c'est moi le texte </p>
-        <div>
 
         </main><!-- #main -->
 

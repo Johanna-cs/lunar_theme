@@ -70,7 +70,11 @@ html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
-
+@font-face { 
+	font-family: Raleway; 
+	src: url(http://onthemoon.com/wp-content/themes/lunar/fonts/Raleway-Regular.ttf); 
+	font-weight: normal; 
+	}
 /* Sections
 	 ========================================================================== */
 
@@ -86,6 +90,7 @@ body {
  */
 main {
 	display: block;
+	font-family: 'Raleway';
 }
 
 /**

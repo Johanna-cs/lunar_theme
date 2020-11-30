@@ -12,6 +12,13 @@ function lunar_supports(){
     add_theme_support('menus');
 	add_theme_support( 'custom-logo' );
 	add_theme_support( 'widgets' );
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+	// Add support for customize line height.
+	add_theme_support( 'custom-line-height' );
+
 	// add_theme_support( 'custom-header' );
     // Déclarer l'emplacement des menus
     register_nav_menus( array(
@@ -52,12 +59,18 @@ function lunar_supports(){
 			'script',
 			'style',
 		)
-    );
-    // Add support for full and wide align images.
-	add_theme_support( 'align-wide' );
+	);
+	
+	add_theme_support( 'editor-color-palette',
+    array(
+		array( 'name' => 'light-background', 'slug'  => 'light-background', 'color' => '#F5F1ED' ),
+		array( 'name' => 'light', 'slug'  => 'light', 'color' => '#EEE8E1' ),
+		array( 'name' => 'grey', 'slug'  => 'grey', 'color' => '#474747' ),
+		array( 'name' => 'brown-light', 'slug'  => 'brown-light', 'color' => '#B68869' ),
+		array( 'name' => 'brown', 'slug'  => 'brown', 'color' => '#785338' ),
+	)
+);
 
-	// Add support for responsive embeds.
-	add_theme_support( 'responsive-embeds' );
 }
 add_action('after_setup_theme', 'lunar_supports');
 

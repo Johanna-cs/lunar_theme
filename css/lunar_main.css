@@ -7,7 +7,6 @@
     text-decoration: none;
 }
 a, :link {
-    color: #474747 !important;
     text-decoration: none;
 }
 a:visited,
@@ -137,9 +136,21 @@ p {
     background-color: #EEE8E1;
 
 }
-.page__title {
-    margin: 3px;
-    color : #b68869;
+.page__title h2{
+    font-size: 2em;
+    background: #EEE8E1 !important;
+    border: none;
+    color: #B68869 !important;
+    margin-bottom: 10px ;
+    width: 100%;
+    padding: 2em;
+}
+.section__title h3{
+    border: none;
+    color: #474747 !important;
+    margin: 3px ;
+    width: 100%;
+    padding: 0.5em;
 }
 main {
     width: 100%;
@@ -148,12 +159,20 @@ main {
 }
 .site__content {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: baseline;
     padding-right: 20px !important;
     padding-left: 20px !important;
 }
+.site__button, .wp-block-lunar-link-button {
+    display: inline;
+    color: white;
+    background-color: #785338;
+    width: max-content;
+    padding: 0.5em;
+}
+.site__button a {
+    color: white;
+    text-decoration: none;
+}  
 .archive__description {
     height: 18px;
 }

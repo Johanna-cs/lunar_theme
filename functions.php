@@ -60,16 +60,20 @@ function lunar_supports(){
 			'style',
 		)
 	);
-	
+	// Custom Gutenberg color palette
 	add_theme_support( 'editor-color-palette',
     array(
-		array( 'name' => 'light-background', 'slug'  => 'light-background', 'color' => '#F5F1ED' ),
+		array( 'name' => 'light-white', 'slug'  => 'light-white', 'color' => '#F5F1ED' ),
 		array( 'name' => 'light', 'slug'  => 'light', 'color' => '#EEE8E1' ),
 		array( 'name' => 'grey', 'slug'  => 'grey', 'color' => '#474747' ),
 		array( 'name' => 'brown-light', 'slug'  => 'brown-light', 'color' => '#B68869' ),
 		array( 'name' => 'brown', 'slug'  => 'brown', 'color' => '#785338' ),
 	)
 );
+	// Custom Gutenberg block editor 
+	add_theme_support('editor-styles');
+	// Style for Gutenberg block editor
+	add_editor_style( 'style-editor.css' );
 
 }
 add_action('after_setup_theme', 'lunar_supports');
@@ -130,23 +134,6 @@ function lunar_get_custom_logo( $html ) {
 add_filter( 'get_custom_logo', 'lunar_get_custom_logo' );
 
 
-require_once 'widgets/wds-instagram-widget.php';
-function lunar_register_widget () {
-    register_widget(WDS_Instagram_Widget::class);
-    register_sidebar([
-        'id' => 'sidebarFollow',
-		'name' => 'Sidebar Abonnez-vous',
-		'class' => 'sidebar_follow',
-        'before_widget' => '<div class="follow_widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<p">',
-        'after_title' => '</p>'
-    ]);
-}
-add_action( 'widgets_init', array( WDS_Instagram_Widget::get_instance(), 'hooks' ) );
-add_action('widgets_init', 'lunar_register_widget');
-
-
 function lunar_register_post_types() {
 	
     // CPT Témoignages
@@ -173,6 +160,8 @@ function lunar_register_post_types() {
 	register_post_type( 'temoignages', $args );
 }
 add_action( 'init', 'lunar_register_post_types' ); // Le hook init lance la fonction
+
+
 
 function lunar_register_assets() {
     
@@ -206,9 +195,8 @@ function template_enqueue_style() {
 		array(), 
 		'1.0'
 	);
-
-	  /** Call regular enqueue */
-	  wp_enqueue_style( 
+ 	/** Call regular enqueue */
+	wp_enqueue_style( 
 		'style',
 		get_stylesheet_uri(), 
 		array(), 

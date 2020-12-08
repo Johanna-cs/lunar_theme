@@ -15,8 +15,8 @@ get_header(); ?>
 
       <div class='site__content'>
               <!-- .page-header -->
-          <main id="primary" class="site-main">
-
+        
+       
             <?php
                 the_content();
 
@@ -27,13 +27,10 @@ get_header(); ?>
                endif;
             ?>
 
-        </main><!-- #main -->
+
 
 
             <?php get_sidebar('sidebarFollow'); ?>
-
-
-
     </div>
 
 

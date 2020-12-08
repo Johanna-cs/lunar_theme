@@ -7,7 +7,7 @@
 ?>
 	<?php if( is_post_type_archive( 'temoignages' )) : ?>
 	<header class='page__header'> 
-		<?php post_type_archive_title( '<h1 class="page__title">', '</h1>' ) ?>
+		<?php post_type_archive_title( '<h2 class="page__title">', '</h2>' ) ?>
 	</header>
 	<main class='site__content'>
 	<div class='temoignages__page'>

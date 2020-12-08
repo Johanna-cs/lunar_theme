@@ -1,19 +1,22 @@
 /* Main css for Home, Blog, Header and Footer */
 
 .page, .site{
+    font-family: 'Raleway', sans-serif;
     color : #474747;
 }
 .site__link {
     text-decoration: none;
+    color: inherit !important;
 }
 a, :link {
+    color: inherit !important;
     text-decoration: none;
 }
 a:visited,
 a:hover,
 a:focus,
 a:active {
-    color: none;
+    color: #474747 !important;
     text-decoration: none;
 }
 li, ul {
@@ -25,15 +28,22 @@ nav {
     display: flex;
     width: 100%;
 }
-h3 {
-    margin-top: 3px;
-    margin-bottom : 3px !important;
-}
+
 p {
     font-size: smaller;
     margin-top: 2px;
     margin-bottom : 2px !important;
 }
+@font-face { 
+	font-family: 'laLuxes', sans-serif; 
+	src: url(http://onthemoon.com/wp-content/themes/lunar/fonts/laLuxes/laLuxesScript.ttf); 
+	font-weight: normal; 
+	}
+@font-face { 
+	font-family: 'laLuxes', serif; 
+	src: url(http://onthemoon.com/wp-content/themes/lunar/fonts/laLuxes/laLuxesSerif.ttf); 
+	font-weight: normal; 
+	}
 /******* Header : logo + menu ******/
 .site__header header {
     padding: none;
@@ -44,8 +54,10 @@ p {
     align-items: center;
     flex-flow: row nowrap;
     color : #474747;
+    font-family: 'Raleway', sans-serif;
     text-decoration : none;
     padding-top: 3px;
+    font-family: 'Raleway', sans-serif !important;
 }
 .site__title {
     display: none;
@@ -59,6 +71,7 @@ p {
     display: flex !important;
     justify-content: flex-end !important;
 }
+
 .header__menu {
     list-style: none;
     text-decoration: none;
@@ -67,8 +80,13 @@ p {
     margin: 5px;
 }
 
-.header__menu li {
+.header__menu li a {
     padding-right: 2em;
+    font-family: 'Raleway', sans-serif !important;
+}
+
+.menu-item a {
+    color: #474747 !important;
 }
 /******* Footer : social, footer menu, legals ******/
 .site__footer footer {
@@ -89,6 +107,8 @@ p {
     text-decoration : none;
     padding-top: 3px;
     font-size: smaller;
+    font-family: 'Raleway', sans-serif !important;
+    
 }
 .footer__social__menu, .site__footer__menu {
     display: flex;
@@ -98,6 +118,7 @@ p {
 .social__menu li, .footer__menu li  {
     padding-right: 1em;
     padding-left: 1em;
+    font-family: 'Raleway', sans-serif !important;
 }
 .social__menu {
     list-style: none;
@@ -105,6 +126,7 @@ p {
     display: flex;
     padding: 3px;
     margin: 3px;
+    
 }
 .footer__menu {
     list-style: none;
@@ -112,6 +134,7 @@ p {
     display: flex;
     padding: 3px;
     margin: 3px;
+    
 }
 .site__footer__legals {
     background-color: #EEE8E1;
@@ -131,21 +154,26 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 6em;
+    width: 100% !important;
+    height: 7.2em;
     background-color: #EEE8E1;
-
+    margin-bottom: 20px ;
+    font-family: 'laLuxes', sans-serif !important;
 }
-.page__title h2{
-    font-size: 2em;
-    background: #EEE8E1 !important;
+.page__title , .page__title h2{
+    font-family: 'laLuxes', sans-serif !important;
+    font-size: 1.5em;
     border: none;
     color: #B68869 !important;
     margin-bottom: 10px ;
     width: 100%;
-    padding: 2em;
+    text-align: center;
 }
-.section__title h3{
+.page__content {
+    margin-left : 20px !important;
+    margin-right: 20px !important;
+}
+.section__title h3, .section__title {
     border: none;
     color: #474747 !important;
     margin: 3px ;
@@ -153,14 +181,16 @@ p {
     padding: 0.5em;
 }
 main {
+    font-family: 'Raleway', sans-serif;
     width: 100%;
-    padding-right: 20px !important;
-    padding-left: 20px !important;
 }
 .site__content {
     display: flex;
-    padding-right: 20px !important;
-    padding-left: 20px !important;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: baseline;
+    font-family: 'Raleway', sans-serif;
+    width: 100%;    
 }
 .site__button, .wp-block-lunar-link-button {
     display: inline;
@@ -181,13 +211,13 @@ main {
     background-color: #785338;
 }
 
-/* Blog home page*/
+/***** Blog home page *****/
 .site__blog img {
     width: auto;
 } 
 .site__blog {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     justify-content: center;
     padding-right: 20px !important;
     padding-left: 20px !important;
@@ -207,7 +237,57 @@ main {
     font-size: smaller;
     text-align: center;
 }
-/******* Page : temoignages post + archive ******/
+/*** Post, articles de blog ***/
+.site__post__content {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 4em !important ;
+    margin-right: 4em !important;
+}
+
+.site__post__content img {
+    width: 728px !important;
+}
+.site__post__meta__container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.site__post__meta ul{
+    text-decoration: none !important;
+    list-style: none !important;
+    margin: 3px;
+    padding: 3px;
+}
+.site__post__meta {
+    font-size: 0.5em;
+    font-weight: 300;
+    margin: 3px;
+    padding: 3px;
+}
+.site__post__container {
+    display: flex;
+    justify-content: center;
+    margin-left: 4em !important ;
+    margin-right: 4em !important;
+}
+.site__post__container p {
+    margin-left: 4em !important ;
+    margin-right: 4em !important;
+}
+img .site__post__container {
+    width: 400px;
+    height: auto;
+    margin-left: 4em !important ;
+    margin-right: 4em !important;
+}
+
+
+
+
 /****** Témoignages : post + archive ******/
 
 .temoignages__page {

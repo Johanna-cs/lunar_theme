@@ -7,7 +7,18 @@ function lunar_supports(){
     // Définir d'autres tailles d'images
     add_image_size( 'square_S', 200, 200, true );
     add_image_size( 'square_M', 300, 300, true );
-    add_image_size( 'square_L', 500, 500, true );
+	add_image_size( 'square_L', 500, 500, true );
+
+	add_filter( 'image_size_names_choose','lunar_custom_image_sizes' );
+
+	function lunar_custom_image_sizes( $sizes ) {
+		return array_merge( $sizes, array(
+			//Add your custom sizes here
+			'square_S' => __( 'Carré miniature' ),
+			'square_M' => __( 'Carré M' ),
+			'square_L' => __( 'Carré L' ),
+			) );
+	}
 
     // Ajouter automatiquement le titre du site dans l'en-tête du site
     add_theme_support( 'title-tag' );

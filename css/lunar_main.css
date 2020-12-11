@@ -44,6 +44,23 @@ p {
 	src: url(http://onthemoon.com/wp-content/themes/lunar/fonts/laLuxes/laLuxesSerif.ttf); 
 	font-weight: normal; 
     }
+/******* Images sizes & css ******/
+
+.square__S {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.square__M {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.square__L {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
 
 /******* Header : logo + menu ******/
 .site__header header {

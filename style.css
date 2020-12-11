@@ -906,9 +906,37 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# Plugins
-WP-gutenberg-block custom colors bakcground and text
+# Plugins & Blocks Gutenberg
+WP-gutenberg-block custom colors background and text
 --------------------------------------------------------------*/
+/******* Blocks styles ******/
+.wp-block-group {
+    width: 100% !important;
+    padding-left: 15% !important;
+	padding-right: 15% !important;
+	margin-block-end: 3px;
+}
+.align-full {
+    margin-right: 40px;
+    margin-left: 40px;
+}
+.align-wide {
+    width: 100%;
+}
+.wp-block-group__inner-container {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+.wp-block-button__link {
+	padding: 0.5em;
+	text-align: center;
+	width: 15em;
+	font-size: 1.2em;
+}
+.wp-block-media-text {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
 .has-light-white-background-color {
 	background-color: #F5F1ED !important;
 }
@@ -941,10 +969,6 @@ WP-gutenberg-block custom colors bakcground and text
 	color: #785338 !important;
 }
 
-.wp-block-media-text {
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
 
 /* Jetpack infinite scroll
 --------------------------------------------- */

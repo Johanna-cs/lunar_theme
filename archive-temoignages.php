@@ -9,31 +9,17 @@
 	<header class='page__header'> 
 		<?php post_type_archive_title( '<h2 class="page__title">', '</h2>' ) ?>
 	</header>
-	<main class='site__content'>
+	</div>
 	<div class='temoignages__page'>
 		<?php while( have_posts() ) : the_post(); echo '<div class="temoignages">';?>
-	
-			<?php $field['required'] = true; ?>
-			<?php 
-				if ( get_field( 'photo_temoin' ) ) :
-				$picture = get_field( 'photo_temoin'); 
-				?>
-		<div class="temoignage__container">
-			<div class='temoin__picture'>
-				<img 
-					src="<?php echo $picture['sizes']['square_S']; ?>"
-					alt="avatar de <?php $picture['title'];?>"/>
-			</div>
-			<div class="temoin__name">
-				<h3><?php the_field( 'prenom_temoin' ); ?></h3></div>
-			<div class="temoin__text">
-				<?php the_field( 'texte_temoin' ); ?></div>
+		<?php the_content() ?>
+
 		</div>
-		<?php echo '</div>'; endif; endwhile ?>
+		<?php echo '</div>'; endwhile ?>
 		<?php else : ?>
-			<h1>Pas de témoignages</h1>
+			<h3>Pas de témoignages</h3>
 		<?php endif; ?>
-	</main>
+	
 </div>
 <?php
 	get_footer();

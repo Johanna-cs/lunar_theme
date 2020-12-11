@@ -1,5 +1,7 @@
 <?php 
 function lunar_supports(){
+
+	load_theme_textdomain( 'lunar' );
     // Ajouter la prise en charge des images mises en avant
     add_theme_support( 'post-thumbnails' );
     // Définir d'autres tailles d'images
@@ -18,6 +20,10 @@ function lunar_supports(){
 	add_theme_support( 'responsive-embeds' );
 	// Add support for customize line height.
 	add_theme_support( 'custom-line-height' );
+	// Add support for experimental link color control.
+	add_theme_support( 'experimental-link-color' );
+	// Add support for experimental cover block spacing.
+	add_theme_support( 'custom-spacing' );
 
 	// add_theme_support( 'custom-header' );
     // Déclarer l'emplacement des menus
@@ -151,10 +157,26 @@ function lunar_register_post_types() {
         'public' => true,
         'show_in_rest' => true,
 		'has_archive' => true,
+		'can_export' => true,
 		'rewrite'     => array( 'slug' => 'temoignage' ), // my custom slug
         'supports' => array( 'title', 'editor','thumbnail', 'page-attributes'),
         'menu_position' => 5, 
-        'menu_icon' => 'dashicons-testimonial',
+		'menu_icon' => 'dashicons-testimonial',
+		'template' => array( // Définir un modèle 
+            array( 'core/image', array(
+				'size' => 'square_S',
+				'className' => 'temoin__picture',
+            ) ),
+            array( 'core/heading', array(
+				'placeholder' => 'Prénom & nom ',
+				'className' => 'temoin__name',
+            ) ),
+            array( 'core/paragraph', array(
+				'placeholder' => 'Le témoignage',
+				'className' => 'temoin__text',
+            ) ),
+		),
+		'template_lock' => 'all', // Verrouiller le modèle pour empêcher les modifications
 	);
 
 	register_post_type( 'temoignages', $args );
@@ -206,3 +228,9 @@ function template_enqueue_style() {
 	}
   
   add_action( 'wp_enqueue_scripts', 'template_enqueue_style' );
+
+  /**
+ * REQUIRED FILES
+ * Include required files.
+ */
+require get_template_directory() . '/inc/block-patterns.php';

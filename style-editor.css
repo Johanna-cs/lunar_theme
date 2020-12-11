@@ -1,17 +1,37 @@
 /* Main column width */
 /* .wp-block {
-    max-width:  900px;
+    max-width:  100%;
+    margin: 3%;
+}  */
+
+/* Width of "wide" blocks */
+/* .wp-block[data-align="wide"] {
+    max-width:  100%;
+    margin: none;
+}  */
+
+/* Width of "full-wide" blocks */
+/* .wp-block[data-align="full"] {
+    width: 100%;
+    margin: none;
 } */
+
+/* Main column width */
+.wp-block {
+  max-width: 720px;
+}
 
 /* Width of "wide" blocks */
 .wp-block[data-align="wide"] {
-    max-width:  900px;
+  max-width: 1080px !important;
+  margin: none !important;
 }
 
 /* Width of "full-wide" blocks */
 .wp-block[data-align="full"] {
-    max-width: 900px;
+  max-width: none;
 }
+
 /*
 @font-face { 
 	font-family: 'laLuxes', sans-serif; 
@@ -31,7 +51,7 @@
 
     /** === Editor Frame === */
 
-  
+/* 
   @media only screen and (min-width: 600px) {
     body .wp-block[data-align="full"] {
       width: calc( 100% + 90px);
@@ -62,10 +82,10 @@
     body .wp-block[data-align="right"] {
       max-width: 125%;
     }
-  }
+  }  */
   
   /** === Content Width === */
-  .wp-block {
+  /* .wp-block {
     width: calc(100vw - (2 * 1rem));
     max-width: 100%;
   }
@@ -84,5 +104,5 @@
   
   .wp-block .wp-block {
     width: 100%;
-  }
-  
+  } */
+   

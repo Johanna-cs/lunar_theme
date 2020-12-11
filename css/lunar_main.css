@@ -43,7 +43,8 @@ p {
 	font-family: 'laLuxes', serif; 
 	src: url(http://onthemoon.com/wp-content/themes/lunar/fonts/laLuxes/laLuxesSerif.ttf); 
 	font-weight: normal; 
-	}
+    }
+
 /******* Header : logo + menu ******/
 .site__header header {
     padding: none;
@@ -192,12 +193,15 @@ main {
     font-family: 'Raleway', sans-serif;
     width: 100%;    
 }
-.site__button, .wp-block-lunar-link-button {
+
+.site__button {
     display: inline;
-    color: white;
-    background-color: #785338;
-    width: max-content;
+    color: white ;
+    background-color: #B68869 ;
+    width: 15em !important;
     padding: 0.5em;
+    text-transform: uppercase;
+    text-align: center;
 }
 .site__button a {
     color: white;
@@ -205,10 +209,6 @@ main {
 }  
 .archive__description {
     height: 18px;
-}
-.sidebarFollow {
-    height: 50px;
-    background-color: #785338;
 }
 
 /***** Blog home page *****/
@@ -291,9 +291,7 @@ img .site__post__container {
 /****** Témoignages : post + archive ******/
 
 .temoignages__page {
-    display: flex ;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+
     margin: 0.5em;
     padding-right: 20px !important;
     padding-left: 20px !important;
@@ -308,6 +306,7 @@ img .site__post__container {
 .temoignages {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 .temoin__picture img {
     border-radius: 50%;

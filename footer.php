@@ -41,7 +41,7 @@
 				<span class="sep"> | </span>
 					<?php
 					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'Design on the moon' ), 'onthemoon', '<a href="https://www.design-onthemoon.com//">Design-onthemoon.com</a>' );
+					printf( esc_html__( 'Theme: %1$s by %2$s.', 'Design on the moon' ), 'Lunar', '<a href="https://www.design-onthemoon.com//">Design-onthemoon.com</a>' );
 					?>
 			</div><!-- .site-info -->
 	</footer><!-- #colophon -->

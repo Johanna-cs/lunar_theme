@@ -916,6 +916,9 @@ WP-gutenberg-block custom colors background and text
 	padding-right: 15% !important;
 	margin-block-end: 3px;
 }
+.wp-block-columns {
+	flex-wrap: row;
+}
 .align-full {
     margin-right: 40px;
     margin-left: 40px;

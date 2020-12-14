@@ -25,7 +25,7 @@
  */
 if ( function_exists( 'register_block_pattern' ) ) {
 
-	// Image + Text.
+	// Image + Text 2 blocs.
 	register_block_pattern(
 		'lunar/text-2bloc',
 		array(
@@ -121,6 +121,45 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			)
 		);
 
-
+	// Image + Text article blog.
+	register_block_pattern(
+		'lunar/blog-post',
+		array(
+			'title' => esc_html__('Article de blog','text-domain'),
+			'categories' => array('text', 'Lunar'),
+			'description' => esc_html_x('Un paragraphe de texte avec une image', 'text-domain'),
+			'content' =>'
+					<!-- wp:group -->
+					<div class="wp-block-group site__post"><div class="wp-block-group__inner-container">
+					<!-- wp:heading {"textAlign":"center","level":3} -->
+					<h3 class="has-text-align-center">Mon titre d\'article</h3>
+					<!-- /wp:heading -->
+					
+					<!-- wp:paragraph {"align":"center"} -->
+					<p class="has-text-align-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac varius ipsum. Cras eget quam est. Nam non euismod lectus. Donec tellus neque, suscipit scelerisque turpis in, elementum aliquam mauris. Quisque a dignissim turpis. Vivamus blandit congue metus eu aliquam. Donec hendrerit pretium mauris ac placerat. Duis luctus suscipit lacus eu interdum. Nunc mi velit, blandit vitae urna et, aliquam vehicula mi. Donec convallis mauris suscipit sodales blandit.</p>
+					<!-- /wp:paragraph -->
+					
+					<!-- wp:paragraph {"align":"center"} -->
+					<p class="has-text-align-center">Proin at finibus orci. Sed faucibus viverra erat. Fusce sit amet dui ex. In sodales ex pharetra sollicitudin pharetra. Ut porttitor gravida nisi ut tincidunt. Cras eros nunc, vehicula et odio non, luctus posuere nulla. Proin et egestas eros, vitae interdum sapien.</p>
+					<!-- /wp:paragraph -->
+					
+					<!-- wp:paragraph {"align":"center"} -->
+					<p class="has-text-align-center">Pellentesque vehicula lorem ac gravida scelerisque. Phasellus scelerisque mattis est id vestibulum. Nunc pulvinar lacus sed enim porttitor gravida. Praesent faucibus lacinia faucibus. Proin volutpat in dolor ac tempor. Duis imperdiet risus lacus, ut tempus nisi gravida convallis. Fusce nunc lacus, dapibus nec ligula cursus, iaculis interdum metus.</p>
+					<!-- /wp:paragraph -->
+					
+					<!-- wp:image {"align":"center","id":390,"sizeSlug":"square_L","linkDestination":"none"} -->
+					<div class="wp-block-image"><figure class="aligncenter size-square_L"><img src="http://monsitetest.local/wp-content/uploads/2020/12/pexels-cliff-booth-4058226-500x500.jpg" alt="" class="wp-image-390"/></figure></div>
+					<!-- /wp:image -->
+					
+					<!-- wp:paragraph {"align":"center"} -->
+					<p class="has-text-align-center">Vestibulum dictum tempor ante. Praesent eu luctus ligula. Proin sit amet nibh eget nunc fringilla molestie ac in ligula. Nam eu orci ut ex eleifend laoreet vitae maximus erat. Sed venenatis consectetur facilisis. Sed pharetra nisl leo, nec maximus sem placerat at. Fusce lacinia dolor sit amet nunc condimentum, sit amet facilisis massa mollis. Ut in leo pulvinar, vestibulum quam sed, consequat erat. Etiam aliquet orci id nulla auctor, et dignissim nisl pellentesque. Suspendisse ultrices porta magna non volutpat. Proin semper id orci nec feugiat. Aenean eget dapibus mi, sollicitudin accumsan nulla. Quisque eleifend sodales mollis. Cras eget eros quis lorem congue iaculis. Vestibulum ac felis id odio faucibus bibendum et quis nulla.</p>
+					<!-- /wp:paragraph -->
+					
+					<!-- wp:paragraph {"align":"center"} -->
+					<p class="has-text-align-center">Vestibulum magna libero, vestibulum sed molestie vel, tempor sed tortor. Nulla pulvinar, quam id volutpat commodo, augue risus egestas lorem, non fermentum erat leo sed lacus. Maecenas pulvinar id odio non viverra. Phasellus et velit neque. Donec laoreet neque nec mi lobortis, eget porta dolor placerat. Integer gravida augue ac rhoncus dictum. Aliquam purus mauris, suscipit eu dui et, feugiat viverra nisl. Morbi ac euismod ipsum. Donec dolor nulla, maximus vel pulvinar sit amet, elementum et mi. Duis non pretium nisl, non pretium risus. Ut fringilla dapibus tincidunt. Duis faucibus mauris id congue lacinia.</p>
+					<!-- /wp:paragraph --></div></div>
+					<!-- /wp:group --> '
+				)
+		);
 
 }

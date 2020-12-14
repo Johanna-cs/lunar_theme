@@ -245,15 +245,11 @@ main {
     flex-flow: column wrap ;
     align-items: center;
     width: 18em;
-    text-align: center;
-    margin: 2em;
+    margin-right: 2em;
+    margin-left: 2em;
+    text-align: justify;
 }
-.site__post p {
-    padding: none !important;
-    margin: none;
-    font-size: smaller;
-    text-align: center;
-}
+
 /*** Post, articles de blog ***/
 .site__post__content {
     margin: 20px;

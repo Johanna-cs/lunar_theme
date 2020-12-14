@@ -34,16 +34,7 @@ p {
     margin-top: 2px;
     margin-bottom : 2px !important;
 }
-@font-face { 
-	font-family: 'laLuxes', sans-serif; 
-	src: url(http://onthemoon.com/wp-content/themes/lunar/fonts/laLuxes/laLuxesScript.ttf); 
-	font-weight: normal; 
-	}
-@font-face { 
-	font-family: 'laLuxes', serif; 
-	src: url(http://onthemoon.com/wp-content/themes/lunar/fonts/laLuxes/laLuxesSerif.ttf); 
-	font-weight: normal; 
-    }
+
 /******* Images sizes & css ******/
 
 .square__S {
@@ -176,16 +167,9 @@ p {
     height: 7.2em;
     background-color: #EEE8E1;
     margin-bottom: 20px ;
-    font-family: 'laLuxes', sans-serif !important;
 }
-.page__title , .page__title h2{
-    font-family: 'laLuxes', sans-serif !important;
-    font-size: 1.5em;
-    border: none;
-    color: #B68869 !important;
-    margin-bottom: 10px ;
-    width: 100%;
-    text-align: center;
+.page__title {
+    font-size: 2.2em;
 }
 .page__content {
     margin-left : 20px !important;
@@ -215,7 +199,7 @@ main {
     display: inline;
     color: white ;
     background-color: #B68869 ;
-    width: 15em !important;
+
     padding: 0.5em;
     text-transform: uppercase;
     text-align: center;

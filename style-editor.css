@@ -105,4 +105,46 @@
   .wp-block .wp-block {
     width: 100%;
   } */
-   
+
+  /**** Font family and fallback fonts ****/
+
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&family=Raleway&display=swap');
+  @font-face { 
+    font-family: 'laLuxes';
+    src: url('./fonts/laLuxes/LaLuxesScript.ttf'); 
+    font-style: italic; 
+    }  
+  @font-face { 
+    font-family: laLuxes; 
+    src: url('./fonts/laLuxes/LaLuxesSerif.ttf'); 
+    font-style:normal; 
+    }
+  h2 {
+    font-family: 'laLuxes','Dancing Script', cursive;
+    font-style: italic;
+    font-size: 2.2em;
+    font-weight: 200;
+      border: none;
+      color: #B68869 !important;
+      width: 100%;
+      text-align: center;
+  }
+  h3 {
+    font-family: 'laluxes','Playfair Display', serif;
+    font-style: normal;
+      font-weight: 300 !important;
+      font-size: 1em;
+      margin-top: 3px;
+    margin-bottom : 3px;
+    text-transform: uppercase;
+  }
+  h4 {
+    font-family: 'laLuxes','Dancing Script', cursive;
+    font-style: italic;
+    font-weight: 300 !important;
+    font-size: 3em;
+    margin-top: 3px;
+    margin-bottom : 3px;
+    text-transform: capitalize;
+    padding-block: 10px;
+  }

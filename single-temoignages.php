@@ -8,8 +8,7 @@ get_header();
 ?>
   <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
     
-    <div class="lunar_temoin_container">
-      <?php the_image('square_S'); ?>
+    <div class="temoignages">
 
         <?php the_content(); ?>
     </div>

@@ -1,6 +1,6 @@
 /* Main css for Home, Blog, Header and Footer */
 
-.page, .site{
+.page{
     font-family: 'Raleway', sans-serif;
     color : #474747;
 }
@@ -34,6 +34,7 @@ p {
     margin-top: 2px;
     margin-bottom : 2px !important;
 }
+
 
 /******* Images sizes & css ******/
 
@@ -169,7 +170,7 @@ p {
     margin-bottom: 20px ;
 }
 .page__title {
-    font-size: 2.2em;
+    font-size: 3.2em;
 }
 .page__content {
     margin-left : 20px !important;
@@ -181,6 +182,7 @@ p {
     margin: 3px ;
     width: 100%;
     padding: 0.5em;
+    text-transform: uppercase !important;
 }
 main {
     font-family: 'Raleway', sans-serif;
@@ -188,9 +190,8 @@ main {
 }
 .site__content {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: baseline;
+    flex-flow: column wrap;
+    align-items: inherit;
     font-family: 'Raleway', sans-serif;
     width: 100%;    
 }
@@ -199,7 +200,8 @@ main {
     display: inline;
     color: white ;
     background-color: #B68869 ;
-
+    font-family: 'laluxes';
+    font-style: normal;
     padding: 0.5em;
     text-transform: uppercase;
     text-align: center;
@@ -288,24 +290,24 @@ img .site__post__container {
 /****** Témoignages : post + archive ******/
 
 .temoignages__page {
-
     margin: 0.5em;
     padding-right: 20px !important;
     padding-left: 20px !important;
     width: 100%;
-}
-.temoignage__container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-}
-.temoignages {
-    display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.temoignages {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding-block: 1em;
+    text-align: center;
+}
 .temoin__picture img {
+    width: 50%;
     border-radius: 50%;
 }
 .temoin__name {
@@ -314,7 +316,7 @@ img .site__post__container {
     text-align: center;
 }
 .temoin__text {
-    width: 10em;
+    width: 250px;
 }
 .temoin__text p{
     text-align: center;

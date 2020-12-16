@@ -14,14 +14,14 @@ get_header();
 
 		<section class="error-404 not-found">
 			<header class="site__header">
-				<h1 class="site__title"><?php esc_html_e( 'Oops! Cette page n&rsquo;existe pas !', 'onthemoon' ); ?></h1>
+				<h1 class="site__title"><?php esc_html_e( 'Oops! Cette page n&rsquo;existe pas !', 'Lunar' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<div class="site__content">
-				<p><?php esc_html_e( 'Peut être que vous pouvez trouver ce que vous cherchez dans les articles récents.', 'onthemoon' ); ?></p>
+				<p><?php esc_html_e( 'Peut être que vous pouvez trouver ce que vous cherchez dans les articles récents.', 'Lunar' ); ?></p>
 
 					<?php
-					the_widget( 'WP_Widget_Recent_Posts' );
+						the_widget( 'WP_Widget_Recent_Posts' );
 					?>
 
 			</div><!-- .page-content -->

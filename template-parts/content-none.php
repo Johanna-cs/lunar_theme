@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'onthemoon' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'text-domain' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -21,7 +21,7 @@
 			printf(
 				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'onthemoon' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'text-domain' ),
 					array(
 						'a' => array(
 							'href' => array(),
@@ -34,7 +34,7 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'onthemoon' ); ?></p>
+			<p><?php esc_html_e( 'Rien trouvé dans cette catégorie. Veuillez faire une nouvelle recherche', 'text-domain' ); ?></p>
 			<?php
 			get_search_form();
 

@@ -170,7 +170,7 @@ function lunar_register_post_types() {
 		'has_archive' => true,
 		'can_export' => true,
 		'rewrite'     => array( 'slug' => 'temoignage' ), // my custom slug
-        'supports' => array( 'title', 'editor','thumbnail', 'page-attributes'),
+        'supports' => array( 'title', 'editor','thumbnail', 'page-attributes', 'custom-fields', 'revisions'),
         'menu_position' => 5, 
 		'menu_icon' => 'dashicons-testimonial',
 		'template' => array( // Définir un modèle 
@@ -194,6 +194,28 @@ function lunar_register_post_types() {
 }
 add_action( 'init', 'lunar_register_post_types' ); // Le hook init lance la fonction
 
+
+// function lunar_temoignage_acf_block() {
+	
+// 	// check function exists
+// 	if( function_exists('acf_register_block') ) {
+		
+// 		// register a testimonial item block
+// 		acf_register_block(array(
+// 			'name'				=> 'temoignage',
+// 			'title'				=> __('Témoignage'),
+// 			'description'		=> __('A custom block for testimonial items.'),
+// 			'render_template'	=> 'template-parts/testimonial.php',
+// 			'category'			=> 'layout',
+// 			'icon'				=> 'dashicons-testimonial',
+// 			'keywords'			=> array( 'Lunar', 'Témoignage', 'Testimonial' ),
+// 			'align' 			=> 'full',
+// 			'post-type'			=> array('temoignages'),
+			
+// 		));
+// 	} 
+// }
+// add_action( 'init', 'lunar_temoignage_acf_block' );
 
 
 function lunar_register_assets() {

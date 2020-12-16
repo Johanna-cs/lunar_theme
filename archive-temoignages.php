@@ -14,12 +14,12 @@
 		<?php while( have_posts() ) : the_post(); echo '<div class="temoignages">';?>
 		<?php the_content() ?>
 
-		</div>
+		
 		<?php echo '</div>'; endwhile ?>
 		<?php else : ?>
 			<h3>Pas de témoignages</h3>
 		<?php endif; ?>
-	
+	</div>
 </div>
 <?php
 	get_footer();

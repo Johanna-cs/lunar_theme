@@ -237,7 +237,14 @@ function lunar_register_assets() {
         array( 'jquery' ), 
         '1.0', 
         true
-    );
+	);
+	wp_enqueue_script( 
+		'lunar-navigation', 
+		get_template_directory_uri() . '/js/navigation.js', 
+		array(),
+		'1.0',
+		true 
+	);
     
 }
 add_action( 'wp_enqueue_scripts', 'lunar_register_assets' );
@@ -246,7 +253,7 @@ function template_enqueue_style() {
 	/** Call specific css enqueue */
 	  wp_enqueue_style( 
 		'lunar', 
-		get_template_directory_uri() . '/css/lunar_main.css',
+		get_template_directory_uri() . '/style-lunar.css',
 		array(), 
 		'1.0'
 	);
@@ -257,6 +264,9 @@ function template_enqueue_style() {
 		array(), 
 		'1.0'
 	);
+
+	wp_enqueue_style( 'font-awesome', 
+	'//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css' );
 
 	}
   

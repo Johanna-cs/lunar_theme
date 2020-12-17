@@ -24,9 +24,17 @@ li, ul {
     text-decoration: none;
     list-style: none;
 }
-nav {
+/* nav {
     display: flex;
     width: 100%;
+} */
+.lunar-burger {
+    border: none;
+    color: #b68869;
+    background-color: transparent;
+    width: 4em;
+    font-size: x-large;
+
 }
 
 p {

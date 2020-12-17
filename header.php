@@ -23,6 +23,8 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'lunar' ); ?></a>
+
 	<header id="masthead" class="site__header">
 			<div class="site__header__infos">
 			<?php
@@ -43,16 +45,24 @@
 			<?php endif; ?>
 		</div> <!-- .site-branding -->
 
-		<nav id="site-navigation" class="site__header__menu">
+	<nav id="site-navigation" class="main-navigation site__header__menu">
+		<div class="main-menu-toggled">
+		<button class="menu-toggle lunar-burger" aria-controls="primary-menu" aria-expanded="false">
+			<i id="offscreen-toggle-icon" class="fas fa-bars"></i>
+		</button>
+		
 			<?php
 			wp_nav_menu(
 				array(
 				'theme_location' => 'menu principal', 
-                'container' => 'ul', // afin d'éviter d'avoir une div autour 
-                'menu_class' => 'header__menu', // ma classe personnalisée 
+                'container'  => 'ul', // afin d'éviter d'avoir une div autour 
+				'menu_class' => 'header__menu', // ma classe personnalisée 
+				'menu_id'    => 'primary-menu',
 				)
 			);
 			?>
+		
+		</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 <div id="page" class="site">

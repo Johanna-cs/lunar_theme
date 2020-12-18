@@ -456,6 +456,7 @@ h3 {
     font-size: 1em;
     margin-top: 3px;
 	margin-bottom : 3px;
+	padding-block: 3px;
 }
 h4 {
 	font-family: 'laLuxes','Dancing Script', cursive;
@@ -941,15 +942,37 @@ WP-gutenberg-block custom colors background and text
 --------------------------------------------------------------*/
 /******* Blocks styles ******/
 .wp-block-group {
-    width: 100% !important;
+    width: 100%;
     padding-left: 15% !important;
 	padding-right: 15% !important;
 	margin-block-end: 3px;
 }
+/* blocks images supperpose */
+.lunar__block-img {
+	position: relative;
+	height: 600px;
+	width: 700px !important;
+	align-self: center;
+}
+.lunar__img-back {
+	position: absolute;
+    z-index: 0;
+    right: 50px;
+}
+.lunar__img-front {
+    position: absolute;
+    z-index: 1;
+    top: 65px;
+    left: 40px;
+}
+
+
+
 /* .wp-block-columns {
 	flex-wrap: row;
 } */
 .align-full {
+	align-self: center;
 	width: 100%;
 }
 .align-wide {

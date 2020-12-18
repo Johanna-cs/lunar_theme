@@ -184,7 +184,7 @@ p {
     margin-left : 20px !important;
     margin-right: 20px !important;
 }
-.section__title h3, .section__title {
+.section__title {
     border: none;
     color: #474747 !important;
     margin: 3px ;
@@ -202,6 +202,15 @@ main {
     align-items: inherit;
     font-family: 'Raleway', sans-serif;
     width: 100%;    
+}
+.site__content .content {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.site__content header {
+    padding: none;
+    margin: none;
+    width: 100%;
 }
 
 .site__button {

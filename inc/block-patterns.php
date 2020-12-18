@@ -148,7 +148,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 					<!-- /wp:paragraph -->
 					
 					<!-- wp:image {"align":"center","id":390,"sizeSlug":"square_L","linkDestination":"none"} -->
-					<div class="wp-block-image"><figure class="aligncenter size-square_L"><img src="http://monsitetest.local/wp-content/uploads/2020/12/pexels-cliff-booth-4058226-500x500.jpg" alt="" class="wp-image-390"/></figure></div>
+					<div class="wp-block-image"><figure class="aligncenter size-square_L"><img src="http://onthemoon.local/wp-content/uploads/2020/11/pexels-cottonbro-5081928-500x500.jpg" alt="" class="wp-image-390"/></figure></div>
 					<!-- /wp:image -->
 					
 					<!-- wp:paragraph {"align":"center"} -->
@@ -162,4 +162,71 @@ if ( function_exists( 'register_block_pattern' ) ) {
 				)
 		);
 
+
+		// Image + Text 
+	register_block_pattern(
+		'lunar/paragraphe',
+		array(
+			'title' => esc_html__('Paragraphe','text-domain'),
+			'categories' => array('text', 'Lunar'),
+			'description' => esc_html_x('Un paragraphe de texte avec une image', 'text-domain'),
+			'content' =>'
+				<!-- wp:group -->
+					<div class="wp-block-group">
+						<div class="wp-block-group__inner-container">
+							<!-- wp:image {"align":"right","id":528,"sizeSlug":"square_M","linkDestination":"none"} -->
+								<div class="wp-block-image">
+									<figure class="alignright size-square_M">
+										<img src="http://onthemoon.local/wp-content/uploads/2020/11/pexels-cottonbro-5081928-300x300.jpg" alt="" class="wp-image-528"/>
+									</figure>
+								</div>
+							<!-- /wp:image -->
+
+							<!-- wp:paragraph {"align":"right"} -->
+								<p class="has-text-align-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet purus et fermentum suscipit. Vivamus dignissim, risus eu auctor rhoncus, arcu sem pulvinar lectus, sit amet gravida velit est eu mauris. Nulla lobortis vulputate ipsum consectetur varius. Maecenas tristique, felis vitae ultrices tempor, quam eros fermentum sem, eu vulputate dui ipsum eu odio. Integer sit amet auctor odio, sed porta sem. Suspendisse porttitor tortor ut lorem semper, ac luctus elit efficitur. Duis ac tristique justo. Cras quis aliquam urna, in lacinia urna. Aenean varius turpis eget urna maximus, nec consequat augue bibendum. Donec arcu felis, tristique nec tortor eu, dignissim cursus urna. Integer viverra, dolor eu scelerisque faucibus, urna ligula elementum dui, sed placerat nulla elit id enim. Phasellus porttitor neque non pellentesque viverra. Phasellus aliquam eros eu nisl mollis tincidunt.</p>
+							<!-- /wp:paragraph -->
+						</div>
+					</div>
+				<!-- /wp:group -->'
+		)
+	);
+
+	// Images supperposées
+	register_block_pattern(
+		'lunar/images',
+		array(
+			'title' => esc_html__('Images','text-domain'),
+			'categories' => array('gallery', 'Lunar'),
+			'description' => esc_html_x('Un paragraphe de texte avec une image', 'text-domain'),
+			'content' =>'
+			<!-- wp:group {"align":"full"} -->
+				<div class="wp-block-group alignfull lunar__block-img">
+					<div class="wp-block-group__inner-container">
+						
+						<!-- wp:image {"align":"right","id":222,"sizeSlug":"square_L","linkDestination":"none","className":"is-style-default"} -->
+							<div class="wp-block-image is-style-default lunar__img-back">
+								<figure class="alignright size-square_L">
+									<img src="http://onthemoon.local/wp-content/uploads/2020/11/pexels-cottonbro-5081928-500x500.jpg" alt="" class="wp-image-222"/>
+								</figure>
+							</div>
+						<!-- /wp:image -->
+
+						<!-- wp:image {"align":"center","id":221,"sizeSlug":"square_M","linkDestination":"none","className":"is-style-default"} -->
+							<div class="wp-block-image is-style-default lunar__img-front">
+								<figure class="aligncenter size-square_M">
+									<img src="http://onthemoon.local/wp-content/uploads/2020/11/pexels-cottonbro-5081919-1-300x300.jpg" alt="" class="wp-image-221"/>
+								</figure>
+							</div>
+						<!-- /wp:image -->
+						
+					</div>
+				</div>
+			<!-- /wp:group -->'
+		)
+	);
 }
+
+
+
+
+

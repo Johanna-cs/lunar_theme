@@ -15,24 +15,13 @@
 get_header();
 ?>
 
-	<div class="site__content">
+<div class="site__content">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		
+	<?php the_content(); ?>
+	
+	
 
-			get_template_part( 'template-parts/content', 'page' );
+</div><!-- site content -->
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</div><!-- site content -->
-
-<?php
-
-get_footer();
+<?php get_footer();

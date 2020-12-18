@@ -266,7 +266,13 @@ function template_enqueue_style() {
 	);
 
 	wp_enqueue_style( 'font-awesome', 
-	'//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css' );
+	'//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css' 
+	);
+
+	wp_register_style( 'fontawesome', 'http:////maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' 
+	);
+	wp_enqueue_style( 'fontawesome'
+	);
 
 	}
   

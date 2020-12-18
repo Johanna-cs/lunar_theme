@@ -197,7 +197,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 		array(
 			'title' => esc_html__('Images','text-domain'),
 			'categories' => array('gallery', 'Lunar'),
-			'description' => esc_html_x('Un paragraphe de texte avec une image', 'text-domain'),
+			'description' => esc_html_x('Deux images supperposées', 'text-domain'),
 			'content' =>'
 			<!-- wp:group {"align":"full"} -->
 				<div class="wp-block-group alignfull lunar__block-img">
@@ -224,6 +224,111 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- /wp:group -->'
 		)
 	);
+	// Bandeau news + insta
+	register_block_pattern(
+		'lunar/bandeau-insta',
+		array(
+			'title' => esc_html__('Bandeau','text-domain'),
+			'categories' => array('text', 'Lunar'),
+			'description' => esc_html_x('Bandeau avec lien mail et instagram feed', 'text-domain'),
+			'content' =>'
+					<!-- wp:group {"align":"full"} -->
+					<div class="wp-block-group alignfull">
+					<div class="wp-block-group__inner-container  lunar__follow-me"><!-- wp:group {"align":"wide","backgroundColor":"brown-light"} -->
+					<div class="wp-block-group alignwide has-brown-light-background-color has-background"><div class="wp-block-group__inner-container"><!-- wp:heading {"textAlign":"center","level":3,"textColor":"light-white"} -->
+					<h3 class="has-text-align-center has-light-white-color has-text-color">Inscris-toi</h3>
+					<!-- /wp:heading -->
+					
+					<!-- wp:paragraph {"align":"center","textColor":"light-white"} -->
+					<p class="has-text-align-center has-light-white-color has-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate est sit amet est eleifend finibus.</p>
+					<!-- /wp:paragraph -->
+					
+					<!-- wp:buttons {"align":"center"} -->
+					<div class="wp-block-buttons aligncenter"><!-- wp:button {"borderRadius":0,"backgroundColor":"light-white","textColor":"brown-light","className":"site__button"} -->
+					<div class="wp-block-button site__button"><a class="wp-block-button__link has-brown-light-color has-light-white-background-color has-text-color has-background no-border-radius">Email</a></div>
+					<!-- /wp:button --></div>
+					<!-- /wp:buttons -->
+					
+					<!-- wp:buttons {"align":"center"} -->
+					<div class="wp-block-buttons aligncenter"><!-- wp:button {"borderRadius":0,"backgroundColor":"brown-light","textColor":"light-white","className":"site__button is-style-outline"} -->
+					<div class="wp-block-button site__button is-style-outline"><a class="wp-block-button__link has-light-white-color has-brown-light-background-color has-text-color has-background no-border-radius">M\'inscrire</a></div>
+					<!-- /wp:button --></div>
+					<!-- /wp:buttons --></div></div>
+					<!-- /wp:group -->
+					
+					<!-- wp:group {"align":"wide","className":"has-light-background-color has-background","backgroundColor":"light"} -->
+					<div class="wp-block-group alignwide has-light-background-color has-background has-light-background-color has-background"><div class="wp-block-group__inner-container"><!-- wp:sbi/sbi-feed-block /--></div></div>
+					<!-- /wp:group --></div></div>
+					<!-- /wp:group -->'
+			)
+		);
+
+
+	// Bandeau news + insta
+	register_block_pattern(
+		'lunar/modules',
+		array(
+			'title' => esc_html__('Modules','text-domain'),
+			'categories' => array('text', 'Lunar'),
+			'description' => esc_html_x('Petits groupes de texte', 'text-domain'),
+			'content' =>
+					'<!-- wp:columns {"verticalAlignment":"center"} -->
+					<div class="wp-block-columns are-vertically-aligned-center lunar__block-modules"><!-- wp:column {"verticalAlignment":"center","width":"33.34%"} -->
+					<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.34%"><!-- wp:group -->
+					<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:group -->
+					<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:heading {"className":"lunar__module-titre1"} -->
+					<h2 class="lunar__module-titre1">1</h2>
+					<!-- /wp:heading -->
+					
+					<!-- wp:heading {"textAlign":"center","level":3,"className":"lunar__module-titre2"} -->
+					<h3 class="has-text-align-center lunar__module-titre2">module</h3>
+					<!-- /wp:heading --></div></div>
+					<!-- /wp:group -->
+					
+					<!-- wp:paragraph {"align":"center","fontSize":"small"} -->
+					<p class="has-text-align-center has-small-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet purus et fermentum suscipit. Vivamus dignissim, risus eu auctor rhoncus, arcu sem pulvinar lectus, sit amet gravida velit est eu mauris. Nulla lobortis vulputate ipsum consectetur varius. </p>
+					<!-- /wp:paragraph --></div></div>
+					<!-- /wp:group --></div>
+					<!-- /wp:column -->
+					
+					<!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
+					<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:group -->
+					<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:group -->
+					<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:heading {"className":"lunar__module-titre1"} -->
+					<h2 class="lunar__module-titre1">2</h2>
+					<!-- /wp:heading -->
+					
+					<!-- wp:heading {"textAlign":"center","level":3,"className":"lunar__module-titre2"} -->
+					<h3 class="has-text-align-center lunar__module-titre2">module</h3>
+					<!-- /wp:heading --></div></div>
+					<!-- /wp:group -->
+					
+					<!-- wp:paragraph {"align":"center","fontSize":"small"} -->
+					<p class="has-text-align-center has-small-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet purus et fermentum suscipit. Vivamus dignissim, risus eu auctor rhoncus, arcu sem pulvinar lectus, sit amet gravida velit est eu mauris. Nulla lobortis vulputate ipsum consectetur varius. </p>
+					<!-- /wp:paragraph --></div></div>
+					<!-- /wp:group --></div>
+					<!-- /wp:column -->
+					
+					<!-- wp:column {"width":"33.33%"} -->
+					<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:group -->
+					<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:group -->
+					<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:heading {"className":"lunar__module-titre1"} -->
+					<h2 class="lunar__module-titre1">3</h2>
+					<!-- /wp:heading -->
+					
+					<!-- wp:heading {"textAlign":"center","level":3,"className":"lunar__module-titre2"} -->
+					<h3 class="has-text-align-center lunar__module-titre2">module</h3>
+					<!-- /wp:heading --></div></div>
+					<!-- /wp:group -->
+					
+					<!-- wp:paragraph {"align":"center","fontSize":"small"} -->
+					<p class="has-text-align-center has-small-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet purus et fermentum suscipit. Vivamus dignissim, risus eu auctor rhoncus, arcu sem pulvinar lectus, sit amet gravida velit est eu mauris. Nulla lobortis vulputate ipsum consectetur varius. </p>
+					<!-- /wp:paragraph --></div></div>
+					<!-- /wp:group --></div>
+					<!-- /wp:column --></div>
+					<!-- /wp:columns -->'
+					)
+				);
 }
 
 

@@ -53,6 +53,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
+#wpadminbar a a:visited, a:hover, a:focus, a:active {
+	color: #ccc !important;
+}
+.ab-item {
+	color: #ccc !important;
+}
 
 /* Normalize
 --------------------------------------------- */
@@ -947,11 +953,54 @@ WP-gutenberg-block custom colors background and text
 	padding-right: 15% !important;
 	margin-block-end: 3px;
 }
+@media only screen and (max-width : 320px) {
+	.wp-block-group {
+		width: 100%;
+		padding-left: 1% !important;
+		padding-right: 1% !important;
+		margin-block-end: 3px;
+	}
+	.lunar__block-img {
+		position: relative;
+		height: 280px;
+		width: 340px ;
+		align-self: center;
+	}
+	}
+
+.lunar__follow-me {
+	display: flex;
+	flex-flow: row-reverse wrap;
+	align-items: center;
+}
+
+/* block modules pour programme */
+.lunar__block-modules {
+	display: flex;
+    flex-flow: row wrap;
+	justify-content: center;
+	font-size: small;
+	padding-bottom: 2em;
+}
+.lunar__module-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.lunar__module-titre1 {
+	position: relative;
+    top: 30px;
+}
+.lunar__module-titre2 {
+	position: relative;
+    bottom: 20px;
+}
+
 /* blocks images supperpose */
 .lunar__block-img {
 	position: relative;
 	height: 600px;
-	width: 700px !important;
+	width: 700px ;
 	align-self: center;
 }
 .lunar__img-back {

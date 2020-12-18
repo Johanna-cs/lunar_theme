@@ -18,8 +18,16 @@
 			<?php wp_nav_menu( 
 				array( 
 					'theme_location' => 'social media',
-					'container'=> 'ul',
-					'menu_class' => 'social__menu',
+					'container'       => 'div',
+					'container_id'    => 'menu-social',
+					'container_class' => 'menu-social',
+					'menu_id'         => 'menu-social-items',
+					'menu_class' 	  => 'social__menu',
+					'depth'           => 1,
+					'link_before'     => '<span class="screen-reader-text">',
+					'link_after'      => '</span>',
+					'fallback_cb'     => '',
+					
 					) ); ?>
 			</nav>
 		<nav id="site-navigation" class="site__footer__menu" role="navigation">

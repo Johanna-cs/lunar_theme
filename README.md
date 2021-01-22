@@ -1,5 +1,5 @@
 
-<img src="./screenshot.png" height="400" align="center">
+<p align="center"><img src="./screenshot.png" height="400" align="center"></p>
 
 # Lunar, un thème WordPress :first_quarter_moon_with_face:
 

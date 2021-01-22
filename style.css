@@ -951,14 +951,15 @@ WP-gutenberg-block custom colors background and text
     width: 100%;
     padding-left: 15% !important;
 	padding-right: 15% !important;
-	margin-block-end: 3px;
+	margin-block-end: 5%;
+    margin-block-start: 5%;
 }
 @media only screen and (max-width : 320px) {
 	.wp-block-group {
 		width: 100%;
 		padding-left: 1% !important;
 		padding-right: 1% !important;
-		margin-block-end: 3px;
+		
 	}
 	.lunar__block-img {
 		position: relative;
@@ -999,7 +1000,7 @@ WP-gutenberg-block custom colors background and text
 /* blocks images supperpose */
 .lunar__block-img {
 	position: relative;
-	height: 600px;
+	height: 550px;
 	width: 700px ;
 	align-self: center;
 }

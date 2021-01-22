@@ -1,6 +1,6 @@
 <?php
 /*
-  Template Name: Accueil 
+  Template Name: Accueil - sans header
   Template Post Type: page
 */
 /**

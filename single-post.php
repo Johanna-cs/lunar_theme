@@ -17,18 +17,18 @@
 
 get_header(); ?>
   <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
-    
-    <div class="site__post__content">
-      <?php the_post_thumbnail('square_M'); ?>
+  <div  class='site__post__header'>
+	    <h3> <?php the_title(); ?> </h3>
+      <div class='site__post__meta__container'>
+          <li class='site__post__meta__li'><?php the_category(); ?></li>
+          <p><?php the_date(); ?></p>
+          <p><?php the_author(); ?></p>
 
-      <h1><?php the_title(); ?></h1>
-        <div class='site__post__meta__container'>
-          <p class="site__post__meta"><?php the_category(); ?></p>
-          <p class="site__post__meta"><?php the_date(); ?></p>
-          <p class="site__post__meta"><?php the_author(); ?></p>
         </div>
-        <div class='site__post__container' ><?php the_content(); ?></div>
-</div>
+  </div>
+    <div class="site__post__content">
+        <?php the_content(); ?></div>
+    </div>
 
   <?php endwhile; endif; ?>
   <div class="site__navigation">

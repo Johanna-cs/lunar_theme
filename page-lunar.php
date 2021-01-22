@@ -1,6 +1,6 @@
 <?php
 /*
-  Template Name: Page Lunar
+  Template Name: Page Lunar - Header
   Template Post Type: page
 */
 /* 

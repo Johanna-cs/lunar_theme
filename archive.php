@@ -26,7 +26,8 @@ get_header();
 				
 					<h3><?php the_title(); ?></h3>	
 				</a>				
-						<p><?php the_excerpt(); ?></p>
+						<p class="site__post__text"><?php the_excerpt(); ?></p>
+						<li class='site__post__meta__li'><?php the_category(); ?></li>
 			</article>
 
 			<?php endwhile; endif; ?>

@@ -9,12 +9,7 @@ J'ai créé ce thème avec en complément le plugin Lunar-blocks qui ajoute des 
 
 :point_right: Projet débuté en novembre 2020, toujours en cours de réalisation début 2021
 
-## Installation
-
-Téléverser le fichier .zip du thème Lunar, dans la section thèmes de WordPress.
-
-
-## Réalisation :construction_worker:
+### Réalisation :construction_worker:
 
 Basé sur un starter thème : [underscore](https://underscores.me/), Lunar est un thème simple et élégant. 
 
@@ -23,5 +18,10 @@ Basé sur un starter thème : [underscore](https://underscores.me/), Lunar est u
 Formée en JavaScript, j'ai relevé le défi d'approcher le développement de WordPress avec Php.:elephant: 
 Une avancée en autodidacte, j'ai beaucoup appris via [Capitaine WP](https://capitainewp.io/) et ses cours très complets. 
 
-## License :moon:
+
+## Installation
+Téléverser le fichier .zip du thème Lunar, dans la section thèmes de WordPress.
+
+
+## License  :moon:
 Projet réalisé pour [Design on the Moon](https://www.design-onthemoon.com/)

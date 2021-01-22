@@ -1,6 +1,6 @@
 Lunar est un thème natif de WordPress
 
-![Image theme Lunar](./screenshot.png =250x)
+![Image](./screenshot.png =250x)
 
 # Lunar, un thème WordPress :first_quarter_moon_with_face:
 
